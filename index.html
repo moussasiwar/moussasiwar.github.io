@@ -1,0 +1,597 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Moussa Siwar — Cybersecurity Engineering Student, SOC, SIEM and Security Automation.">
+  <title>Moussa Siwar | Cybersecurity Portfolio</title>
+
+  <style>
+    :root {
+      --primary: #1746a2;
+      --dark: #17243b;
+      --muted: #627086;
+      --background: #f6f8fc;
+      --white: #ffffff;
+      --border: #e1e7f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark);
+      background: var(--background);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1080px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 22px;
+      font-size: .92rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    button, .button {
+      display: inline-block;
+      border: none;
+      border-radius: 8px;
+      padding: 11px 17px;
+      background: var(--primary);
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: .92rem;
+    }
+
+    .secondary {
+      background: white;
+      color: var(--primary);
+      border: 1px solid var(--border);
+    }
+
+    .hero {
+      padding: 100px 0 85px;
+      background: linear-gradient(135deg, #ffffff, #edf3ff);
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: .9rem;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.3rem);
+      line-height: 1.13;
+      letter-spacing: -1.8px;
+      max-width: 800px;
+    }
+
+    h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 22px 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      margin-bottom: 30px;
+      max-width: 720px;
+    }
+
+    .about-box, .card, .skill-box, .contact-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px;
+    }
+
+    .about-box p + p {
+      margin-top: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px #17243b0c;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+      font-size: 1.15rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .project-icon {
+      font-size: 1.8rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 18px 0;
+    }
+
+    .tag {
+      font-size: .78rem;
+      background: #edf3ff;
+      color: #1746a2;
+      border-radius: 5px;
+      padding: 4px 9px;
+    }
+
+    .project-link {
+      color: var(--primary);
+      font-weight: 700;
+      margin-top: auto;
+      padding-top: 10px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .skill-box h3 {
+      margin-bottom: 12px;
+    }
+
+    .skill-box p {
+      color: var(--muted);
+    }
+
+    .education-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .education-item:last-child {
+      border-bottom: none;
+    }
+
+    .education-item p {
+      color: var(--muted);
+    }
+
+    .contact-box {
+      text-align: center;
+      padding: 42px 24px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin: 12px 0 24px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 0;
+      color: var(--muted);
+      font-size: .9rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        padding: 14px 0;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        justify-content: flex-end;
+        gap: 10px 14px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+    }
+
+    @media (max-width: 460px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">MS.</a>
+
+      <div class="nav-links">
+        <a href="#about" data-en="About" data-fr="À propos">About</a>
+        <a href="#skills" data-en="Skills" data-fr="Compétences">Skills</a>
+        <a href="#projects" data-en="Projects" data-fr="Projets">Projects</a>
+        <a href="#education" data-en="Education" data-fr="Formation">Education</a>
+        <a href="#contact" data-en="Contact" data-fr="Contact">Contact</a>
+        <button id="language-button" type="button" aria-label="Switch language">
+          FR
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="eyebrow"
+             data-en="CYBERSECURITY ENGINEERING STUDENT"
+             data-fr="ÉTUDIANT INGÉNIEUR EN CYBERSÉCURITÉ">
+          CYBERSECURITY ENGINEERING STUDENT
+        </div>
+
+        <h1>
+          <span data-en="Hello, I'm" data-fr="Bonjour, je suis">Hello, I'm</span>
+          <span>Moussa Siwar</span>
+        </h1>
+
+        <p data-en="I am passionate about cybersecurity, SOC operations, SIEM, network security and security automation. I enjoy building practical security labs and learning how to detect, investigate and respond to threats."
+           data-fr="Je suis passionné par la cybersécurité, les opérations SOC, le SIEM, la sécurité réseau et l'automatisation de la réponse aux incidents. J'aime construire des laboratoires pratiques et apprendre à détecter, analyser et traiter les menaces.">
+          I am passionate about cybersecurity, SOC operations, SIEM,
+          network security and security automation. I enjoy building
+          practical security labs and learning how to detect,
+          investigate and respond to threats.
+        </p>
+
+        <p data-en="Currently seeking a Cybersecurity Final Year Project (PFE) internship for 2027."
+           data-fr="À la recherche d'un stage de Projet de Fin d'Études (PFE) en cybersécurité pour 2027.">
+          Currently seeking a Cybersecurity Final Year Project (PFE)
+          internship for 2027.
+        </p>
+
+        <div class="actions">
+          <a href="#projects" class="button"
+             data-en="Explore my projects"
+             data-fr="Découvrir mes projets">Explore my projects</a>
+
+          <a href="https://www.linkedin.com/in/moussa-siwar-116a13204/"
+             target="_blank" rel="noopener noreferrer"
+             class="button secondary"
+             data-en="LinkedIn profile"
+             data-fr="Profil LinkedIn">LinkedIn profile</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title"
+            data-en="About Me"
+            data-fr="À propos de moi">About Me</h2>
+
+        <p class="section-description"
+           data-en="A little about my background and career goals."
+           data-fr="Quelques informations sur mon parcours et mes objectifs.">
+          A little about my background and career goals.
+        </p>
+
+        <div class="about-box">
+          <p data-en="I am a Cybersecurity Engineering student at TEK-UP University, with a background in Business Information Systems."
+             data-fr="Je suis étudiant en cycle ingénieur en cybersécurité à TEK-UP University, avec une formation initiale en informatique de gestion.">
+            I am a Cybersecurity Engineering student at TEK-UP University,
+            with a background in Business Information Systems.
+          </p>
+
+          <p data-en="My interests include security monitoring, incident response, Linux administration, threat intelligence and automation. Through hands-on projects, I aim to strengthen my practical skills and contribute to secure IT infrastructures."
+             data-fr="Mes centres d'intérêt comprennent la supervision de sécurité, la réponse aux incidents, l'administration Linux, le renseignement sur les menaces et l'automatisation. Grâce à des projets pratiques, je souhaite renforcer mes compétences et contribuer à la sécurisation des infrastructures informatiques.">
+            My interests include security monitoring, incident response,
+            Linux administration, threat intelligence and automation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title"
+            data-en="Technical Skills"
+            data-fr="Compétences techniques">Technical Skills</h2>
+
+        <p class="section-description"
+           data-en="Technologies and domains I work with or study."
+           data-fr="Technologies et domaines que je pratique ou que j'étudie.">
+          Technologies and domains I work with or study.
+        </p>
+
+        <div class="skills-grid">
+          <div class="skill-box">
+            <h3>🛡️ SIEM & SOC</h3>
+            <p>Wazuh · Security monitoring · Alert analysis · Incident response</p>
+          </div>
+
+          <div class="skill-box">
+            <h3>🌐 Network Security</h3>
+            <p>TCP/IP · pfSense · Firewalls · Network troubleshooting</p>
+          </div>
+
+          <div class="skill-box">
+            <h3>🐧 Systems</h3>
+            <p>Linux · Red Hat Enterprise Linux · Windows · System administration</p>
+          </div>
+
+          <div class="skill-box">
+            <h3>⚙️ Automation & Tools</h3>
+            <p>Python · n8n · TheHive · Cortex · MISP · Zabbix · REST APIs</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title"
+            data-en="Featured Projects"
+            data-fr="Projets principaux">Featured Projects</h2>
+
+        <p class="section-description"
+           data-en="Hands-on projects related to cybersecurity, monitoring and secure development."
+           data-fr="Projets pratiques liés à la cybersécurité, à la supervision et au développement sécurisé.">
+          Hands-on projects related to cybersecurity, monitoring
+          and secure development.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <div class="project-icon">🔐</div>
+            <h3>Open-Source SOAR Lab</h3>
+            <p data-en="A security lab concept combining alert monitoring, threat intelligence, incident management and response automation."
+               data-fr="Un laboratoire de sécurité combinant la supervision des alertes, le renseignement sur les menaces, la gestion des incidents et l'automatisation de la réponse.">
+              A security lab concept combining alert monitoring,
+              threat intelligence, incident management and response automation.
+            </p>
+            <div class="tags">
+              <span class="tag">Wazuh</span>
+              <span class="tag">TheHive</span>
+              <span class="tag">Cortex</span>
+              <span class="tag">MISP</span>
+              <span class="tag">n8n</span>
+              <span class="tag">pfSense</span>
+            </div>
+            <a class="project-link" href="https://github.com/"
+               target="_blank" rel="noopener noreferrer"
+               data-en="Add project repository →"
+               data-fr="Ajouter le dépôt du projet →">
+              Add project repository →
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="project-icon">🔑</div>
+            <h3>SecureVault</h3>
+            <p data-en="A learning project exploring secure authentication, cryptography and application security."
+               data-fr="Un projet d'apprentissage explorant l'authentification sécurisée, la cryptographie et la sécurité des applications.">
+              A learning project exploring secure authentication,
+              cryptography and application security.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Authentication</span>
+              <span class="tag">Cryptography</span>
+            </div>
+            <a class="project-link" href="https://github.com/"
+               target="_blank" rel="noopener noreferrer"
+               data-en="Add project repository →"
+               data-fr="Ajouter le dépôt du projet →">
+              Add project repository →
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="project-icon">📊</div>
+            <h3>Monitoring & Security</h3>
+            <p data-en="Infrastructure monitoring and security-event visibility using open-source monitoring and SIEM tools."
+               data-fr="Supervision de l'infrastructure et visibilité sur les événements de sécurité grâce à des outils open source de supervision et de SIEM.">
+              Infrastructure monitoring and security-event visibility
+              using open-source monitoring and SIEM tools.
+            </p>
+            <div class="tags">
+              <span class="tag">Zabbix</span>
+              <span class="tag">Wazuh</span>
+              <span class="tag">Linux</span>
+            </div>
+            <a class="project-link" href="https://github.com/"
+               target="_blank" rel="noopener noreferrer"
+               data-en="Add project repository →"
+               data-fr="Ajouter le dépôt du projet →">
+              Add project repository →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <h2 class="section-title"
+            data-en="Education & Certifications"
+            data-fr="Formation et certifications">Education & Certifications</h2>
+
+        <div class="about-box">
+          <div class="education-item">
+            <h3>TEK-UP University</h3>
+            <p data-en="Engineering Cycle — Cybersecurity"
+               data-fr="Cycle ingénieur — Cybersécurité">
+              Engineering Cycle — Cybersecurity
+            </p>
+          </div>
+
+          <div class="education-item">
+            <h3>Business Information Systems</h3>
+            <p data-en="Previous academic background"
+               data-fr="Formation académique antérieure">
+              Previous academic background
+            </p>
+          </div>
+
+          <div class="education-item">
+            <h3 data-en="Certifications" data-fr="Certifications">Certifications</h3>
+            <p data-en="Add your earned certifications and credential links here."
+               data-fr="Ajoutez ici vos certifications obtenues et les liens vers vos justificatifs.">
+              Add your earned certifications and credential links here.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <h2 class="section-title"
+              data-en="Let's Connect"
+              data-fr="Restons en contact">Let's Connect</h2>
+
+          <p data-en="Interested in my profile or a cybersecurity opportunity? Feel free to contact me."
+             data-fr="Mon profil ou une opportunité en cybersécurité vous intéresse ? N'hésitez pas à me contacter.">
+            Interested in my profile or a cybersecurity opportunity?
+            Feel free to contact me.
+          </p>
+
+          <div class="actions" style="justify-content:center">
+            <a class="button"
+               href="https://www.linkedin.com/in/moussa-siwar-116a13204/"
+               target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+            <a class="button secondary"
+               href="https://github.com/">GitHub</a>
+
+            <!-- Replace with your real professional email -->
+            <a class="button secondary"
+               href="mailto:YOUR_EMAIL@example.com">Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Moussa Siwar ·
+      <span data-en="Cybersecurity Portfolio"
+            data-fr="Portfolio Cybersécurité">Cybersecurity Portfolio</span>
+    </div>
+  </footer>
+
+  <script>
+    const languageButton = document.getElementById("language-button");
+    let currentLanguage = "en";
+
+    languageButton.addEventListener("click", () => {
+      currentLanguage = currentLanguage === "en" ? "fr" : "en";
+
+      document.documentElement.lang = currentLanguage;
+
+      document.querySelectorAll("[data-en][data-fr]").forEach(element => {
+        element.textContent = element.dataset[currentLanguage];
+      });
+
+      languageButton.textContent = currentLanguage === "en" ? "FR" : "EN";
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
